@@ -1,0 +1,76 @@
+
+pgm 14
+//Circular Queue Using Array in C
+
+A circular queue is a queue in which the last position is connected back to the first position. It efficiently reuses the empty spaces created after deletion.
+Algorithm
+1. Enqueue
+
+    Check if the queue is full:
+    front == (rear + 1) % MAX
+    If full, display Queue Overflow.
+    If the queue is empty, set front = rear = 0.
+    Otherwise, set rear = (rear + 1) % MAX.
+    Insert the element at queue[rear].
+
+2. Dequeue
+
+    Check if the queue is empty:
+    front == -1
+    If empty, display Queue Underflow.
+    Store queue[front] as the deleted element.
+    If front == rear, set front = rear = -1.
+    Otherwise, set front = (front + 1) % MAX.
+
+3. Display
+
+    Check if the queue is empty.
+    Start from front.
+    Print each element and move using:
+    i = (i + 1) % MAX
+    Stop when i == rear.
+//
+
+
+
+15pgm
+//Double Ended Queue (Deque) Using Array in C
+
+A double ended queue (Deque) is a linear data structure in which insertion and deletion can be performed from both the front and rear.
+Operations
+
+    Insert at front
+    Insert at rear
+    Delete from front
+    Delete from rear
+    Display
+
+Algorithm
+Insert at Front
+
+    Check whether the deque is full.
+    If empty, set front = rear = 0.
+    Otherwise, decrease front.
+    Insert the element at deque[front].
+
+Insert at Rear
+
+    Check whether the deque is full.
+    If empty, set front = rear = 0.
+    Otherwise, increase rear.
+    Insert the element at deque[rear].
+
+Delete from Front
+
+    Check whether the deque is empty.
+    Store deque[front].
+    If only one element exists, set front = rear = -1.
+    Otherwise, increase front.
+
+Delete from Rear
+
+    Check whether the deque is empty.
+    Store deque[rear].
+    If only one element exists, set front = rear = -1.
+    Otherwise, decrease rear.
+//
